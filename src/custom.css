@@ -167,6 +167,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   justify-content: space-around
 }
 
+.sc-desktop-wrapper img{
+  left:0 !important;
+}
+
+.api-img-wrapper img{
+  width: 430px !important;
+  height: 415px !important;
+  border-radius: 50% !important;
+  box-shadow: 0px 0px 20px 0px #00000017;
+}
+
+.apic-container,{
+  flex-direction: column !important;
+  align-items: center;
+}
+
+.sli-container{
+  flex-direction: column !important;
+}
 
 .brif-desc-wrap{
   height: 320px;
@@ -198,7 +217,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .ft-overlay {
-  position: absolute;
   width: 100%;
   top: 0;
   left: 0;
@@ -207,7 +225,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   background-position:center;
   background-image: url("/public/images/s2.png");
   color: white;
-  display: flex;
   padding-top:30px;
 }
 
@@ -225,11 +242,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .at-title {
   position: relative;
   display: inline-block;
+  margin-bottom:20px;
 }
 
 .at-title b {
   color:#2DC4EA;
   font-weight: 400;
+
 }
 
 .at-title::after {
@@ -327,6 +346,13 @@ max-width: 550px;
 }
 
   @media (max-width: 700px) {
+
+    .api-img-wrapper img {
+      width: 282px !important;
+      height: 270px !important;
+      border-radius: 50% !important;
+      box-shadow:0px 0px 20px 0px #00000017;
+  }
     .bn-desc-wrap h1{
       font-size: 18px;
     }

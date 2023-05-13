@@ -50,7 +50,7 @@ const ApiComponent = () => {
         initial="hidden"
         animate={mainControls}
         transition={{ duration: 0.9, delay: 0.55 }}
-        className="lg:h-vh60 w-full flex justify-center flex-col lg:flex-row"
+        className="lg:h-vh60 w-full flex justify-center flex-col lg:flex-row apic-container"
       >
         <div className="h-rem26 lg:w-2/5">
           <div className="api-img-wrapper">
@@ -85,7 +85,7 @@ const ApiComponent = () => {
                 </button>
               ) : (
                 <span className="px-3 text-gray-400 text-xs">
-                  Click "view more" to See more contents
+                  Pls! Click "view more"
                 </span>
               )}
             </div>

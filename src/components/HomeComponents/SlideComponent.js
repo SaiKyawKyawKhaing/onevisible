@@ -70,7 +70,7 @@ const SlideComponent = () => {
         transition={{ duration: 1.9, delay: 0.5 }}
         className="lg:h-vh50 slideComponent lg:w-vw112 flex justify-center items-center"
       >
-        <div className=" h-auto w-4/5 flex justify-around items-center flex-col lg:flex-row">
+        <div className="sli-container h-auto w-4/5 flex justify-around items-center flex-col lg:flex-row">
           <div className="w-1/5 h-full">
             {isChecked ? (
               <div className="sc-desktop-wrapper">

@@ -39,8 +39,8 @@ const contactinfos = [
 
 const Footer = () => {
   return (
-    <div class="ft-big-image">
-      <div class="ft-overlay flex-col lg:flex-row justify-evenly lg:pl-0 pl-4">
+    <div class="ft-overlay">
+      <div class="flex flex-col lg:flex-row justify-evenly lg:pl-0 pl-4">
         <div>
           <h1 className="text-2xl py-4">QUICKLINKS</h1>
           <ul>
@@ -74,6 +74,9 @@ const Footer = () => {
             })}
           </ul>
         </div>
+      </div>
+      <div className="border-y-2 border-white w-10/12 py-10 mx-auto py-6">
+        123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123
       </div>
     </div>
   );
