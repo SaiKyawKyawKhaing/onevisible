@@ -49,7 +49,7 @@ const ApiComponent = () => {
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.8, delay: 0.25 }}
+        transition={{ duration: 0.9, delay: 0.55 }}
         className="lg:h-vh60 w-full flex justify-center flex-col lg:flex-row"
       >
         <div className="h-rem26 lg:w-2/5">
@@ -84,8 +84,8 @@ const ApiComponent = () => {
                   Back
                 </button>
               ) : (
-                <span className="px-3 text-gray-400">
-                  Click view more to See more content
+                <span className="px-3 text-gray-400 text-xs">
+                  Click "view more" to See more contents
                 </span>
               )}
             </div>

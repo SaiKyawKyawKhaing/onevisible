@@ -34,11 +34,11 @@ const Topbar = () => {
               );
             })}
             <li>
-              <div className="quote flex">
+              <div className="quote hidden lg:flex">
                 <div className="icon-wrapper">
                   <img src={`/images/quote.png`} alt="Icon" />
                 </div>
-                <div> QUOTE</div>
+                <div className="cursor-pointer"> QUOTE</div>
               </div>
             </li>
             <li className="pl-3">
