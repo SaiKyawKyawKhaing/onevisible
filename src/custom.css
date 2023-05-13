@@ -321,6 +321,9 @@ max-width: 550px;
     .bn-desc-wrap h1{
       font-size: 18px;
     }
+    .api-img-wrapper img {
+      max-width: 330px;
+  }
     .sc-desktop-wrapper img,.sc-mobile-wrapper img{
       max-width: 330px;
       position: static;

@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
+import Dropdown from "../common/Dropdown";
 
 const Topbar = () => {
   const infos = [
@@ -39,6 +40,9 @@ const Topbar = () => {
                 </div>
                 <div> QUOTE</div>
               </div>
+            </li>
+            <li className="pl-3">
+              <Dropdown />
             </li>
           </ul>
         </div>

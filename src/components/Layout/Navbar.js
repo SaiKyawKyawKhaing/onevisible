@@ -32,7 +32,15 @@ const Navbar = () => {
     <>
       {showNavIcon && (
         <motion.nav animate={isOpen ? "open" : "closed"} variants={variants}>
-          <div className="absolute min-h-screen w-full bg-white z-50"></div>
+          <div className="absolute min-h-screen w-full bg-white z-50">
+            <div className="min-h-screen flex justify-center items-center">
+              <ul>
+                {routes.map((route) => {
+                  return <li className="text-4xl py-3">{route.name}</li>;
+                })}
+              </ul>
+            </div>
+          </div>
         </motion.nav>
       )}
       <nav className="relative flex flex-wrap items-center justify-between px-2 py-2 bg-white-500">
@@ -71,7 +79,7 @@ const Navbar = () => {
               <ul className="flex list-none ml-auto justify-end">
                 <li
                   onClick={() => setIsOpen((isOpen) => !isOpen)}
-                  className="nav-item flex items-center pointer"
+                  className="nav-item flex items-center cursor-pointer"
                 >
                   {!isOpen ? <FiAlignJustify /> : <FiX />}
                 </li>
