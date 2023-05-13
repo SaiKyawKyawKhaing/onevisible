@@ -1,12 +1,23 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { RxChevronLeft, RxChevronRight } from "react-icons/rx";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { FiArrowRight } from "react-icons/fi";
 
 const SlideComponent = () => {
-  const [isChecked, setIsChecked] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const mainControls = useAnimation();
+  const [isChecked, setIsChecked] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentMbImageIndex, setCurrentMbImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView, mainControls]);
 
   const handleToggle = () => {
     setIsChecked((prevState) => !prevState);
@@ -48,8 +59,17 @@ const SlideComponent = () => {
   };
 
   return (
-    <>
-      <div className="lg:h-vh50 slideComponent w-vw112 flex justify-center items-center">
+    <div ref={ref}>
+      <motion.div
+        variants={{
+          hidden: { opacity: 1, x: 1000 },
+          visible: { opacity: 1, x: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{ duration: 1.9, delay: 0.5 }}
+        className="lg:h-vh50 slideComponent lg:w-vw112 flex justify-center items-center"
+      >
         <div className=" h-auto w-4/5 flex justify-around items-center flex-col lg:flex-row">
           <div className="w-1/5 h-full">
             {isChecked ? (
@@ -69,10 +89,12 @@ const SlideComponent = () => {
               </div>
 
               <div className="text-white py-2 text-sm">
-                orem Ipsum is It is a long established fact that a reader will
-                be distracted by the readable content of a page when looking at
-                its layout. The point of using Lorem Ipsum is that it has a
-                more-or-less
+                <p>
+                  lorem Ipsum is It is a long established fact that a reader
+                  will be distracted by the readable content of a page when
+                  looking at its layout. The point of using Lorem Ipsum is that
+                  it has a more-or-less
+                </p>
               </div>
               <div className="text-white py-2 text-sm">
                 orem Ipsum is It is a long established fact that a reader will
@@ -131,8 +153,8 @@ const SlideComponent = () => {
             </div>
           </div>
         </div>
-      </div>
-    </>
+      </motion.div>
+    </div>
   );
 };
 

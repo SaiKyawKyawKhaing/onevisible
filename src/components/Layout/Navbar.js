@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import routes from "../../router/routers";
+import { FiSearch, FiAlignJustify, FiX } from "react-icons/fi";
+
 const variants = {
   open: { opacity: 1, x: 0 },
   closed: { opacity: 0, x: "-100%" },
@@ -28,9 +30,11 @@ const Navbar = () => {
   }, []);
   return (
     <>
-      <motion.nav animate={isOpen ? "open" : "closed"} variants={variants}>
-        <div className="absolute min-h-screen w-full bg-red-500 z-50"></div>
-      </motion.nav>
+      {showNavIcon && (
+        <motion.nav animate={isOpen ? "open" : "closed"} variants={variants}>
+          <div className="absolute min-h-screen w-full bg-white z-50"></div>
+        </motion.nav>
+      )}
       <nav className="relative flex flex-wrap items-center justify-between px-2 py-2 bg-white-500">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
@@ -56,6 +60,9 @@ const Navbar = () => {
                     </Link>
                   </li>
                 ))}
+                <li className="nav-item flex items-center">
+                  <FiSearch />
+                </li>
               </ul>
             </div>
           )}
@@ -64,15 +71,14 @@ const Navbar = () => {
               <ul className="flex list-none ml-auto justify-end">
                 <li
                   onClick={() => setIsOpen((isOpen) => !isOpen)}
-                  className="nav-item flex items-center"
+                  className="nav-item flex items-center pointer"
                 >
-                  Icon
+                  {!isOpen ? <FiAlignJustify /> : <FiX />}
                 </li>
               </ul>
             </div>
           )}
         </div>
-        {console.log("cccccc", isOpen)}
       </nav>
     </>
   );

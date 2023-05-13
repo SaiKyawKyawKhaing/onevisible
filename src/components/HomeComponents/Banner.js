@@ -1,13 +1,27 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
+import { motion } from "framer-motion";
 
 const Banner = () => {
   const title = "TRIPPRO - AN ECOMMERCE SOLUTION";
   const desc = `Lorem Ipsum is simply dummy text of the printing and typesettingindustry. Lorem Ipsum has been the industry's standard dummy textever since the 1500s, when an unknown Lorem Ipsum has been theindustry's standard dummy text ever since the 1500s, when anunknown`;
   return (
     <>
-      <div class="bn-big-image z-lowz">
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, x: -100 },
+          visible: { opacity: 1, x: 0 },
+        }}
+        initial="hidden"
+        animate="visible"
+        transition={{
+          ease: "linear",
+          duration: 0.5,
+          x: { duration: 1 },
+        }}
+        class="bn-big-image z-lowz"
+      >
         <div class="bn-overlay">
           <div className="bn-desc-wrap pt-5">
             <h1 className="py-4">{title}</h1>
@@ -57,7 +71,7 @@ const Banner = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div>
         <div>
           <div className="laptop-wrapper">
