@@ -15,6 +15,14 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
+    if (isOpen) {
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.documentElement.style.overflow = "auto";
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1100) {
         setShowNavIcon(true);
@@ -34,9 +42,20 @@ const Navbar = () => {
         <motion.nav animate={isOpen ? "open" : "closed"} variants={variants}>
           <div className="absolute min-h-screen w-full bg-white z-50">
             <div className="min-h-screen flex justify-center items-center">
-              <ul>
+              <ul className="font-light">
                 {routes.map((route) => {
-                  return <li className="text-4xl py-3">{route.name}</li>;
+                  return (
+                    <li className="text-4xl py-3">
+                      {" "}
+                      <Link
+                        to={route.path}
+                        className="text-black-500 px-3 py-1 hover:text-cskyblue"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {route.name}
+                      </Link>
+                    </li>
+                  );
                 })}
               </ul>
             </div>

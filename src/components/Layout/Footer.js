@@ -75,9 +75,9 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="border-y-2 border-white w-10/12 py-10 mx-auto py-6">
+      {/* <div className="border-y-2 border-white w-10/12 py-10 mx-auto py-6">
         123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123
-      </div>
+      </div> */}
     </div>
   );
 };

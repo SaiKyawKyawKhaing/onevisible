@@ -34,9 +34,8 @@
 }
 
 
-
 .bg-black-opacity-16 {
-  background-color: #00000029;
+  background-color: #00000014;
 }
 
 /* * */
@@ -178,7 +177,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   box-shadow: 0px 0px 20px 0px #00000017;
 }
 
-.apic-container,{
+.apic-container{
   flex-direction: column !important;
   align-items: center;
 }
@@ -197,6 +196,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .cs_shadow{
   margin:10px 0px;
+  display: flex !important;
 }
 .slideComponent{
   height: 100vh;
@@ -292,6 +292,7 @@ max-width: 550px;
 
 .cs_shadow {
   box-shadow: 1px 0px 12px 0px #00000029;
+  display: flex !important;
 }
 
 
@@ -347,6 +348,16 @@ max-width: 550px;
 
   @media (max-width: 700px) {
 
+    .logo-wrap {
+      position: absolute;
+      height: 58px !important;
+      background: #fff;
+      bottom: -10px;
+      width: 240px;
+      border-radius: 12px;
+      box-shadow: -2px -20px 9px 0px #c2baba87;
+  }
+
     .api-img-wrapper img {
       width: 282px !important;
       height: 270px !important;
@@ -364,7 +375,7 @@ max-width: 550px;
       position: static;
     }
     .slideComponent{
-      height: 115vh;
+      height: 145vh;
     }
 
     .bn-desc-wrap p{
@@ -375,7 +386,7 @@ max-width: 550px;
     }
   
     .at-container{
-      height: 80vh;
+      height: 100vh;
     }
     .bn-overlay{
       justify-content: center;

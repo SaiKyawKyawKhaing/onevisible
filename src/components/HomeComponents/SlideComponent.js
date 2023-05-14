@@ -3,7 +3,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { RxChevronLeft, RxChevronRight } from "react-icons/rx";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { FiArrowRight } from "react-icons/fi";
 
 const SlideComponent = () => {
   const ref = useRef(null);
@@ -70,21 +69,37 @@ const SlideComponent = () => {
         transition={{ duration: 1.9, delay: 0.5 }}
         className="lg:h-vh50 slideComponent lg:w-vw112 flex justify-center items-center"
       >
-        <div className="sli-container h-auto w-4/5 flex justify-around items-center flex-col lg:flex-row">
+        <div className="sli-container h-auto lg:w-4/5 flex justify-around items-center flex-col lg:flex-row">
           <div className="w-1/5 h-full">
             {isChecked ? (
-              <div className="sc-desktop-wrapper">
+              <motion.div
+                className="sc-desktop-wrapper"
+                initial={{ opacity: 0, x: -100 }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  transition: { duration: 0.5 },
+                }}
+              >
                 <img src={images[currentImageIndex]} />
-              </div>
+              </motion.div>
             ) : (
-              <div className="sc-mobile-wrapper">
+              <motion.div
+                className="sc-mobile-wrapper"
+                initial={{ opacity: 0, x: -100 }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  transition: { duration: 0.5 },
+                }}
+              >
                 <img src={mbimages[currentMbImageIndex]} />
-              </div>
+              </motion.div>
             )}
           </div>
-          <div className="bg-gradient-to-r from-ccyan to-cskyblue w-4/5 h-full flex justify-center sm:rounded lg:justify-end items-center">
-            <div className="flex justify-center w-4/5 flex-col">
-              <div className="text-4xl text-white py-2 pt-4">
+          <div className="bg-gradient-to-r from-ccyan to-cskyblue w-4/5 h-full flex justify-center sm:rounded lg:justify-end items-center rounded-lg lg:ronded">
+            <div className="flex justify-center lg:w-4/5 flex-col p-2 rounded">
+              <div className="lg:text-4xl text-2xl text-white py-2 pt-4">
                 Their Old Website & Problems
               </div>
 
@@ -111,14 +126,20 @@ const SlideComponent = () => {
               {isChecked ? (
                 <div className="flex z-heigh">
                   <div
-                    className="text-white text-4xl"
-                    onClick={handleBackClick}
+                    className="text-white text-4xl cursor-pointer"
+                    onClick={() => {
+                      handleBackClick();
+                      mainControls.start("visible");
+                    }}
                   >
                     <RxChevronLeft />
                   </div>
                   <div
-                    className="text-white text-4xl"
-                    onClick={handleNextClick}
+                    className="text-white text-4xl cursor-pointer"
+                    onClick={() => {
+                      handleNextClick();
+                      mainControls.start("visible");
+                    }}
                   >
                     <RxChevronRight />
                   </div>
@@ -126,14 +147,20 @@ const SlideComponent = () => {
               ) : (
                 <div className="flex z-heigh">
                   <div
-                    className="text-white text-4xl"
-                    onClick={mbhandleBackClick}
+                    className="text-white text-4xl cursor-pointer"
+                    onClick={() => {
+                      mbhandleBackClick();
+                      mainControls.start("visible");
+                    }}
                   >
                     <RxChevronLeft />
                   </div>
                   <div
-                    className="text-white text-4xl"
-                    onClick={mbhandleNextClick}
+                    className="text-white text-4xl cursor-pointer"
+                    onClick={() => {
+                      mbhandleNextClick();
+                      mainControls.start("visible");
+                    }}
                   >
                     <RxChevronRight />
                   </div>

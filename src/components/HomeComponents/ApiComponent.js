@@ -50,7 +50,7 @@ const ApiComponent = () => {
         initial="hidden"
         animate={mainControls}
         transition={{ duration: 0.9, delay: 0.55 }}
-        className="lg:h-vh60 w-full flex justify-center flex-col lg:flex-row apic-container"
+        className="lg:h-vh100 w-full flex justify-center flex-col lg:flex-row apic-container"
       >
         <div className="h-rem26 lg:w-2/5">
           <div className="api-img-wrapper">
@@ -69,7 +69,13 @@ const ApiComponent = () => {
                 key={post.id}
                 style={{ display: index < visiblePosts - 5 ? "none" : "block" }}
               >
-                <div className="bg-white-500 cs_shadow h-16 flex items-center px-3">
+                <div
+                  className={`${
+                    index === 0
+                      ? "cs_shadow bg-gradient-to-r from-ccyan to-cskyblue"
+                      : "cs_shadow"
+                  }  h-16 flex items-center px-3`}
+                >
                   <div className="px-5 text-cskyblue text-2xl">{post.id}</div>
                   {post.title}
                 </div>
@@ -84,9 +90,7 @@ const ApiComponent = () => {
                   Back
                 </button>
               ) : (
-                <span className="px-3 text-gray-400 text-xs">
-                  Pls! Click "view more"
-                </span>
+                <span className="px-3 text-gray-400 text-xs">Pls! Click</span>
               )}
             </div>
           </div>
