@@ -1,7 +1,8 @@
 import React from "react";
+import Commingsoon from "../../components/common/Commingsoon";
 
 const index = () => {
-  return <div>This is the company Pages</div>;
+  return <Commingsoon link="/" desc="Company Page !" />;
 };
 
 export default index;

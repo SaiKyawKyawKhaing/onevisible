@@ -50,7 +50,7 @@ const ApiComponent = () => {
         initial="hidden"
         animate={mainControls}
         transition={{ duration: 0.9, delay: 0.55 }}
-        className="lg:h-vh100 w-full flex justify-center flex-col lg:flex-row apic-container"
+        className="lg:h-vh70 w-full flex justify-center flex-col lg:flex-row apic-container"
       >
         <div className="h-rem26 lg:w-2/5">
           <div className="api-img-wrapper">

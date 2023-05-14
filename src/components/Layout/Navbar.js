@@ -67,7 +67,9 @@ const Navbar = () => {
           <div className="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
             <div className="logo-wrap">
               <div className="logo-wrapper">
-                <img src="/images/vcLogo.png" alt="Image Description" />
+                <Link to="/">
+                  <img src="/images/vcLogo.png" alt="Image Description" />
+                </Link>
               </div>
             </div>
           </div>

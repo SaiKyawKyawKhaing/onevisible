@@ -67,7 +67,7 @@ const SlideComponent = () => {
         initial="hidden"
         animate={mainControls}
         transition={{ duration: 1.9, delay: 0.5 }}
-        className="lg:h-vh50 slideComponent lg:w-vw112 flex justify-center items-center"
+        className="lg:h-vh80 slideComponent lg:w-vw112 flex justify-center items-center"
       >
         <div className="sli-container h-auto lg:w-4/5 flex justify-around items-center flex-col lg:flex-row">
           <div className="w-1/5 h-full">
@@ -126,7 +126,7 @@ const SlideComponent = () => {
               {isChecked ? (
                 <div className="flex z-heigh">
                   <div
-                    className="text-white text-4xl cursor-pointer"
+                    className="text-white text-4xl hover:text-blue-500 cursor-pointer"
                     onClick={() => {
                       handleBackClick();
                       mainControls.start("visible");
@@ -135,7 +135,7 @@ const SlideComponent = () => {
                     <RxChevronLeft />
                   </div>
                   <div
-                    className="text-white text-4xl cursor-pointer"
+                    className="text-white text-4xl hover:text-blue-500 cursor-pointer"
                     onClick={() => {
                       handleNextClick();
                       mainControls.start("visible");
@@ -147,7 +147,7 @@ const SlideComponent = () => {
               ) : (
                 <div className="flex z-heigh">
                   <div
-                    className="text-white text-4xl cursor-pointer"
+                    className="text-white text-4xl hover:text-blue-500 cursor-pointer"
                     onClick={() => {
                       mbhandleBackClick();
                       mainControls.start("visible");
@@ -156,7 +156,7 @@ const SlideComponent = () => {
                     <RxChevronLeft />
                   </div>
                   <div
-                    className="text-white text-4xl cursor-pointer"
+                    className="text-white text-4xl hover:text-blue-500 cursor-pointer"
                     onClick={() => {
                       mbhandleNextClick();
                       mainControls.start("visible");
